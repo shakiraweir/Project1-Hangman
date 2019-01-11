@@ -22,26 +22,27 @@
     </div>
    
     <div id="inputLetterSection">
-        <h2>Player 2</h2>
-        <p class="current-word">Current word:</p>
-        <ul id='letters'></ul>
-        <input type="text" id="inputLetterTxt" />
-        <input type="button" id="enterLetterBtn" value="Ok" onclick='storeLetter(event)'/>
-        <label id="enterLetterPrompt" >&nbsp;Guess a letter</label>
-                <!-- draw hangman stickfigure using canvas API -->
-        <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas> 
-        <div id="display"></div>
+        <h2 class = "second-player">Player 2</h2>
+        <!-- canvas sketch will go here -->
+        <canvas id="myCanvas" width="500" height="350" style="border:2px solid #000000;"></canvas>  
         <br>
-        <br>
+        <div id="newWord">
+            <p class="current-word">Current Word:</p>
+            <br>
+            <br>
+            <ul id='letters'> </ul>
+            <div class="letterDisplay">
+                <span id="display"></span>
+            </div>  
+            <input type="text" id="inputLetterTxt" placeholder="guess a letter"/>
+            <input type="button" id="enterLetterBtn" value="enter" onclick='storeLetter(event)'/>
+        </div>
+        <div id="outcomeDisplaySection">
+            <span id="outcomeMsg"></span>
+            <input type="button" id="startOverBtn" value="reset" onclick='startOver(event)'/>
+            <input type="button" id="exitGameBtn" value="exit" onclick='exitGame(event)'/>
+        </div>
     </div>
-    <div id="outcomeDisplaySection">
-        <span id="outcomeMsg"></span>
-        <button type="button" id="startOverBtn" onclick='startOver(event)'>Continue</button>
-    </div>
-        <!-- <form>
-            <input type="reset" value="Reset"></input>
-            <input type="submit" value="End Game"></input>
-        </form>		 -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // display hanger inside canvas when page loads
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-
+  
 window.onload = function displayHanger() {
     ctx.moveTo(10,320);
     ctx.lineTo(120,320);
@@ -17,7 +17,7 @@ window.onload = function displayHanger() {
 }
 hideWordInputElements(); //hide ability to input a word once word is entered and value is stored
 hideLetterInputElements(); //hide ability to input a letter until a word has been entered
-hideOutcomeSection();
+hideOutcomeSection(); //hide reset and continue buttons
 
  var currentWord = []; //currentWord will be set to the most recent word typed in the word text box
  var currentLetter = ""; //currentLetter will be set to the most recent letter typed in the letter text box
@@ -83,6 +83,7 @@ function storeWord(evt) { // onclick() called in html tag
     wordInput.value = "";
     hideWordInputElements(); //hide ability to input a word once word is entered and value is stored
     showLetterInputElements(); //reveal ability to input a letter once word is entered and value is stored
+    showOutcomeSection(); 
 
     displayEmptyWordTemplate(); //reveal underlined blank space for each letter of word stored in currentWord array
 }
@@ -90,6 +91,7 @@ function storeWord(evt) { // onclick() called in html tag
 function startOver(evt) { //onclick() called in html tag
     evt.preventDefault(); //prevents page from refreshing when button is clicked
     showWordInputElements();
+    hideLetterInputElements();
     hideOutcomeSection();
 }
 
@@ -98,7 +100,7 @@ const letters = document.getElementById('letters');
 function displayEmptyWordTemplate() {
     for (i = 0; i < currentWord[0].length; i++) {
         let letter = document.createElement('li');
-        letter.innerHTML = '_';
+        letter.innerHTML = "_";
         letters.appendChild(letter);
     }   
 }   
@@ -130,7 +132,7 @@ function storeLetter(evt) { //onclick() called in html tag
 
 function storeLetterInLetterBox() {
     // show letter output
-    let display = document.createElement('div');
+    let display = document.createElement('span');
     displayBox.innerHTML += currentLetter + " ";
     displayBox.appendChild(display)
 }
@@ -185,8 +187,3 @@ function hideOutcomeSection() {
 function showOutcomeSection() {
     document.getElementById('outcomeDisplaySection').style.display = 'block';
 }
-//major issues
-//issues- getting words with two of the same letter to display
-//getting hangman part to display
-//figuring out how to dynamically create an element
-//getting letters to store in word

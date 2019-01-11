@@ -1,5 +1,8 @@
 body {
     background: lightgray;
+    margin: 0 auto;
+    position: relative;
+    height: 600px;
 }
 
 h1 {
@@ -22,25 +25,51 @@ h2 {
     font-size: 48px;
 }
 
+
+
+p {    
+    font-family: 'Noticia Text', serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: purple;
+}
+
+li {
+    display: inline;
+}
+
+
 .form {
-    /* display: flex; */
-    /* flex-direction: column; */
     text-align: center;
     margin-right: 80px;
-    /* align-content: flex-end; */
     padding-top: 80px;
     margin: 20px 0;    
 }
 
 #myCanvas {
-    margin-left: 50px;
-    margin-top: 20px;
-    padding: 40px;
+    position: absolute;
+    /* bottom: 10px; */
+    top: 180px;
+    left: 500px;
+}
+
+#inputLetterSection {
+    position: absolute;
+    top: 250px;
+    left: 600px;
+    padding: 0 15px;
+}
+
+.second-player {
+    left: 50px;
+    /* right: 500px; */
 }
 
 
-#inputWordTxt, #inputLetterTxt {
-    background: fff;
+#inputWordTxt, #inputLetterTxt  {
+    background: #fff;
     color: #000;
     text-align: center;
     font-size: 15px;
@@ -53,7 +82,7 @@ h2 {
     border-radius: 10px;
 }
 
-#enterWordBtn, #enterLetterBtn {
+#enterWordBtn, #enterLetterBtn, #startOverBtn, #exitGameBtn {
     background: purple;
     color: #fff;
     text-align: center;
@@ -63,10 +92,27 @@ h2 {
     padding: 10px 25px;
     border-radius: 10px;
 }
+
+#startOverBtn, #exitGameBtn {
+    margin-top: 75px;
+    margin-left: 5px;
+}
+
 #playGameSection {
     display: flex;
     justify-content: center;
 }
+
+#hangman {
+    border: solid violet 1px ;
+}
+ 
+.player2 {
+    /* border: solid green 1px;  */
+    text-align: center; 
+    width: 300px;
+    height: 300px;
+}  
 
 button {
     background: purple;
@@ -75,6 +121,41 @@ button {
     font-family: 'Noticia Text', serif;
     line-height: 40px;
     margin-top: 80px;
+}
+
+.letterDisplay {
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    border: solid gray 3px;
+    text-align: center;
+    line-height: 2.0;
+    height: 30px;
+    margin: 50px;
+    width: 300px;
+}
+#newWord {
+    /* border: solid green 1px; */
+    height: 400px;
+    width: 400px;
+    text-align: center;
+}
+#letters {
+    font-size: 56px;
+    font-weight: bold;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    letter-spacing: 5px;
+}
+
+#display {
+    font-size: 22px;
+    font-weight: normal;
+    display: flex;
+    letter-spacing: 5px;
+    padding-bottom: 5px;
+    justify-content: center;
 }
 
 #playGameBtn {
@@ -89,23 +170,22 @@ button {
 #enterWordBtn {
     border: solid purple 2px;
 }
-
-#display {
-    border: solid yellow 2px;
-    padding: 40px;
+#letters li {
+    text-align: center;
 }
+/* #display {
+    border: solid brown 2px;
+    /* padding: 40px; */
 
-.letterBox {
+/*  */
+/* .letterBox { */
     /* border: solid red 2px; */
-    display: none;
+    /* display: none;
     /* visibility: hidden; */
-    float: left;
+    /* float: left;
     width: 100px;
     height: 50px;
     border-bottom: solid #000;
     margin: 10px;
 }
 
-.letters {
-    border-bottom: solid #000;
-}
