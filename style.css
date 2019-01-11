@@ -8,10 +8,61 @@ h1 {
     font-family: 'Indie Flower', cursive;
     font-size: 130px;
     font-weight: 800;
-    padding: 50px;
+    padding-top: 30px;
     margin-top: 40px;
 }
 
+h2 {
+    font-family: 'Noticia Text', serif;
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-decoration-color: purple;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 48px;
+}
+
+.form {
+    /* display: flex; */
+    /* flex-direction: column; */
+    text-align: center;
+    margin-right: 80px;
+    /* align-content: flex-end; */
+    padding-top: 80px;
+    margin: 20px 0;    
+}
+
+#myCanvas {
+    margin-left: 50px;
+    margin-top: 20px;
+    padding: 40px;
+}
+
+
+#inputWordTxt, #inputLetterTxt {
+    background: fff;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: 'Noticia Text', serif;
+    font-weight: bold;
+    padding: 5px 25px;
+    margin-right: 0;
+    padding-right: 0;
+    border-radius: 10px;
+}
+
+#enterWordBtn, #enterLetterBtn {
+    background: purple;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+    font-family: 'Noticia Text', serif;
+    padding: 10px 25px;
+    border-radius: 10px;
+}
 #playGameSection {
     display: flex;
     justify-content: center;
@@ -28,8 +79,8 @@ button {
 
 #playGameBtn {
     font-size: 50px;
-    padding: 30px 160px;;
-    border-radius: 20%;
+    padding: 30px 160px;
+    border-radius: 10px;
 
 }
 #enterWordTxt {

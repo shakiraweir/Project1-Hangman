@@ -14,14 +14,11 @@
         <button type="button" id="playGameBtn" onclick='playGame(event)'>Play</button>
     </div>
     <div id="inputWordSection">
-        <h2>Player 1</h2>	
-        <input type="text" id="inputWordTxt" />
-        <input type="button" id="enterWordBtn" value="Ok" onclick='storeWord(event)'/> 
-        <label id="enterWordPrompt" >Enter a word</label>		
-        <br>   
-        <!-- draw hangman stickfigure using canvas API -->
-        <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas>
-        <br>
+        <h2>Player 1</h2>
+        <div class="form">   
+            <input type="text" id="inputWordTxt" placeholder="enter a word" />
+            <input type="button" id="enterWordBtn" value="enter" onclick='storeWord(event)'/> 
+        </div>   
     </div>
    
     <div id="inputLetterSection">
@@ -31,6 +28,8 @@
         <input type="text" id="inputLetterTxt" />
         <input type="button" id="enterLetterBtn" value="Ok" onclick='storeLetter(event)'/>
         <label id="enterLetterPrompt" >&nbsp;Guess a letter</label>
+                <!-- draw hangman stickfigure using canvas API -->
+        <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas> 
         <div id="display"></div>
         <br>
         <br>

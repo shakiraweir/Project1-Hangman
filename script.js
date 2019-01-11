@@ -19,7 +19,7 @@ hideWordInputElements(); //hide ability to input a word once word is entered and
 hideLetterInputElements(); //hide ability to input a letter until a word has been entered
 hideOutcomeSection();
 
- var curresntWord = []; //currentWord will be set to the most recent word typed in the word text box
+ var currentWord = []; //currentWord will be set to the most recent word typed in the word text box
  var currentLetter = ""; //currentLetter will be set to the most recent letter typed in the letter text box
  var totalLettersFound = 0; //totaLettersFound will be set to total letters guessed correctly for the currentWord
  var currentHangmanPartDisplayed = 0; //currentHangmanPartDisplayed will increment by 1 as body part is revealed for each wrong word
