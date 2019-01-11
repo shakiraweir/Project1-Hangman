@@ -125,7 +125,22 @@ function processLetter(currentLetter) {
     }   
 }              
 
+//reset the screen after the user guesses the full word correctly or when all hangman parts have been displayed and they miss the word
+if (totalLettersFound > 0 && totalLettersFound === currentWord[0].length) {
+    displayOutCome('You guessed correctly! The word is ' + currentWord);
+
+    //reset the main variables and start over with a new word
+    currentWord = [];
+    currentLetter = '';
+    totalLettersFound = 0;
+    currentHangmanPartDisplayed = 0; //remove any hangman body parts from the display
+
+    //reset the display for user input
+    hideLetterInputElements(); //hide Player 2 section on the bottom that allows entry of the letter (text input box, button amd letter display box)
+    showWordInputElements(); //display the text input box for entering a word, just as if the web page was first loaded
+}
     
+
 //hide and reveal sections of the game
 function hideLetterInputElements() {
     document.getElementById('inputLetterSection').style.display = 'none';
@@ -133,12 +148,15 @@ function hideLetterInputElements() {
 function hideWordInputElements() {
     document.getElementById('inputWordSection').style.display = 'none';
 }
-
 function showLetterInputElements() {
     document.getElementById('inputLetterSection').style.display = 'block';
+}
+function showWordInputElements() {
+    document.getElementById('inputWordSection').style.display = 'block';
 }
 
 //major issues
 //issues- getting words with two of the same letter to display
 //getting hangman part to display
 //figuring out how to dynamically create an element
+//getting letters to store in word
