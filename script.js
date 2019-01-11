@@ -16,12 +16,12 @@ window.onload = function displayHanger() {
     ctx.stroke();
 }
 
-hideLetterInputElements(); //Hide ability to input a letter until a word has been entered
+hideLetterInputElements(); //hide ability to input a letter until a word has been entered
 
  var currentWord = []; //currentWord will be set to the most recent word typed in the word text box
  var currentLetter = ""; //currentLetter will be set to the most recent letter typed in the letter text box
  var totalLettersFound = 0; //totaLettersFound will be set to total letters guessed correctly for the currentWord
- var arrayOfBodyParts = [ //arrayOfBodyParts will be set to a list of each hangman part to be displayed when wrong letter is entered
+ var arrayOfBodyParts = [ //arrayOfBodyParts is set to a list of each hangman part to be displayed when wrong letter is entered
     function displayRope() { //7 parts of the array will equal the total amount of tries a user has to enter an incorrect letter before game is lost
         ctx.stroke();
         ctx.moveTo(220,60);
@@ -60,7 +60,32 @@ hideLetterInputElements(); //Hide ability to input a letter until a word has bee
     }
 ]
 
-//Hide and reveal sections of the game
+//store and process each letter input and word input when button is clicked
+var wordInput = document.getElementById("inputWordTxt");
+var letterInput = document.getElementById("inputLetterTxt")
+var messageBox = document.getElementById("display");
+
+//series of steps that happen when word is entered
+function storeWord(evt) { // onclick() called in html tag
+    evt.preventDefault(); //prevents page from refreshing when ok button is clicked
+    currentWord.push(wordInput.value); //push and store value of current word entered by user into currentWord array
+    wordInput.value = "";   //erase the word from the text field so the player cannot see it
+    hideWordInputElements(); //hide ability to input a word once word is entered and value is stored
+    showLetterInputElements(); //reveal ability to input a letter once word is entered and value is stored
+
+    displayEmptyWordTemplate(); //reveal underlined blank space for each letter of word stored in currentWord array
+}
+
+//series of steps that happen when letter is entered
+function storeLetter(evt) { //onclick() called in html tag
+    evt.preventDefault(); //prevents page from refreshing when ok button is clicked
+    currentLetter = letterInput.value; //store string value of current letter entered by user into currentLetter array
+    letterInput.value = ""; // erase the word from the text field 
+    storeLetterInMessageBox(); //display each letter entered by player as a reference list for players to know which letters were entered
+    processLetter(currentLetter); //process currentLetter entered by player
+}
+
+//hide and reveal sections of the game
 function hideLetterInputElements() {
     document.getElementById('inputLetterSection').style.display = 'none';
 }
