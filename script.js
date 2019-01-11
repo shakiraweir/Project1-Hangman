@@ -79,6 +79,12 @@ function storeWord(evt) { // onclick() called in html tag
     displayEmptyWordTemplate(); //reveal underlined blank space for each letter of word stored in currentWord array
 }
 
+function startOver(evt) { //onclick() called in html tag
+    evt.preventDefault(); //prevents page from refreshing when ok button is clicked
+    showWordInputElements();
+    hideOutcomeSection();
+}
+
 const letters = document.getElementById('letters');
 
 function displayEmptyWordTemplate() {
