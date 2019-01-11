@@ -2,6 +2,36 @@ body {
     background: lightgray;
 }
 
+h1 {
+    text-align: center;
+    text-decoration-style: solid;
+    font-family: 'Indie Flower', cursive;
+    font-size: 130px;
+    font-weight: 800;
+    padding: 50px;
+    margin-top: 40px;
+}
+
+#playGameSection {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background: purple;
+    color: #fff;
+    text-align: center;
+    font-family: 'Noticia Text', serif;
+    line-height: 40px;
+    margin-top: 80px;
+}
+
+#playGameBtn {
+    font-size: 50px;
+    padding: 30px 160px;;
+    border-radius: 20%;
+
+}
 #enterWordTxt {
     border: solid green 2px;
 }
