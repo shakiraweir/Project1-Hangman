@@ -61,28 +61,47 @@ hideLetterInputElements(); //hide ability to input a letter until a word has bee
 ]
 
 //store and process each letter input and word input when button is clicked
-var wordInput = document.getElementById("inputWordTxt");
-var letterInput = document.getElementById("inputLetterTxt")
-var messageBox = document.getElementById("display");
+const wordInput = document.getElementById("inputWordTxt");
+const letterInput = document.getElementById("inputLetterTxt")
+const messageBox = document.getElementById("display");
 
 //series of steps that happen when word is entered
 function storeWord(evt) { // onclick() called in html tag
     evt.preventDefault(); //prevents page from refreshing when ok button is clicked
     currentWord.push(wordInput.value); //push and store value of current word entered by user into currentWord array
-    wordInput.value = "";   //erase the word from the text field so the player cannot see it
+    //clear text field
+    wordInput.value = "";
     hideWordInputElements(); //hide ability to input a word once word is entered and value is stored
     showLetterInputElements(); //reveal ability to input a letter once word is entered and value is stored
 
     displayEmptyWordTemplate(); //reveal underlined blank space for each letter of word stored in currentWord array
 }
 
+const letters = document.getElementById('letters');
+
+function displayEmptyWordTemplate() {
+    for (i = 0; i < currentWord[0].length; i++) {
+        var word = currentWord[0].charAt(i);
+        var letter = document.createElement('li');
+        letter.innerHTML = '_';
+        letters.appendChild(letter);
+    }   
+}   
+
 //series of steps that happen when letter is entered
 function storeLetter(evt) { //onclick() called in html tag
     evt.preventDefault(); //prevents page from refreshing when ok button is clicked
     currentLetter = letterInput.value; //store string value of current letter entered by user into currentLetter array
-    letterInput.value = ""; // erase the word from the text field 
-    storeLetterInMessageBox(); //display each letter entered by player as a reference list for players to know which letters were entered
+    //clear text field
+    letterInput.value = "";
+    storeLetterInLetterBox(); //display each letter entered by player as a reference list for players to know which letters were entered
     processLetter(currentLetter); //process currentLetter entered by player
+}
+
+function storeLetterInLetterBox() {
+    // show letter output
+    messageBox.innerHTML = "";
+    messageBox.innerHTML += currentLetter + " ";
 }
 
 //hide and reveal sections of the game
