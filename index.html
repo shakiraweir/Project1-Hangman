@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman</title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <div id="inputWordSection">
+        <h2>Player 1</h2>	
+        <input type="text" id="inputWordTxt" />
+        <input type="button" id="enterWordBtn" value="Ok" onclick='storeWord(event)'/>
+        <label id="enterWordPrompt" >&nbsp;Enter a word<label/>		
+    </div>
+    <br>   
+                <!-- draw hangman stickfigure using canvas API -->
+    <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas>
+    <br>
+    <div id="inputLetterSection">
+        <h2>Player 2</h2>
+        <p class="current-word">Current word:</p>
+        <ul id='letters'></ul>
+        <input type="text" id="inputLetterTxt" />
+        <input type="button" id="enterLetterBtn" value="Ok" onclick='storeLetter(event)'/>
+        <div id="display"></div>
+        <label id="enterLetterPrompt" >&nbsp;Guess a letter<label/>		
+    </div>
+    <form>
+        <input type="reset" value="Reset"></input>
+        <input type="submit" value="End Game"></input>
+    </form>
+    </div>  
+</body>
+</html>
