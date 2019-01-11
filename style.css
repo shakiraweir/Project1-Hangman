@@ -25,8 +25,6 @@ h2 {
     font-size: 48px;
 }
 
-
-
 p {    
     font-family: 'Noticia Text', serif;
     font-size: 25px;
@@ -39,7 +37,6 @@ p {
 li {
     display: inline;
 }
-
 
 .form {
     text-align: center;
@@ -64,7 +61,6 @@ li {
 
 .second-player {
     left: 50px;
-    /* right: 500px; */
 }
 
 
@@ -173,19 +169,3 @@ button {
 #letters li {
     text-align: center;
 }
-/* #display {
-    border: solid brown 2px;
-    /* padding: 40px; */
-
-/*  */
-/* .letterBox { */
-    /* border: solid red 2px; */
-    /* display: none;
-    /* visibility: hidden; */
-    /* float: left;
-    width: 100px;
-    height: 50px;
-    border-bottom: solid #000;
-    margin: 10px;
-}
-
