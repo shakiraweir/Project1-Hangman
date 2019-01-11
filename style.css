@@ -1,3 +1,7 @@
+body {
+    background: lightgray;
+}
+
 #enterWordTxt {
     border: solid green 2px;
 }

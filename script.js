@@ -15,7 +15,7 @@ window.onload = function displayHanger() {
     ctx.lineTo(220,60);
     ctx.stroke();
 }
-
+hideWordInputElements(); //hide ability to input a word once word is entered and value is stored
 hideLetterInputElements(); //hide ability to input a letter until a word has been entered
 hideOutcomeSection();
 
@@ -67,6 +67,13 @@ const wordInput = document.getElementById("inputWordTxt");
 const letterInput = document.getElementById("inputLetterTxt")
 const displayBox = document.getElementById("display");
 
+
+//play Hangman
+function playGame(evt) { // onclick() called in html tag
+    evt.preventDefault(); //prevents page from refreshing when play button is clicked
+    hidePlayGameSection(); //hide play game section when user clicks button to reveal first section of game
+}
+
 //series of steps that happen when word is entered
 function storeWord(evt) { // onclick() called in html tag
     evt.preventDefault(); //prevents page from refreshing when ok button is clicked
@@ -80,7 +87,7 @@ function storeWord(evt) { // onclick() called in html tag
 }
 
 function startOver(evt) { //onclick() called in html tag
-    evt.preventDefault(); //prevents page from refreshing when ok button is clicked
+    evt.preventDefault(); //prevents page from refreshing when button is clicked
     showWordInputElements();
     hideOutcomeSection();
 }
@@ -149,6 +156,12 @@ function processLetter(currentLetter) {
 }              
 
 //hide and reveal sections of the game
+function showPlayGameSection() {
+    document.getElementById('playGameSection').style.display = 'block';
+}
+function hidePlayGameSection() {
+    document.getElementById('playGameSection').style.display = 'none';
+}
 function hideLetterInputElements() {
     document.getElementById('inputLetterSection').style.display = 'none';
 }
@@ -162,7 +175,7 @@ function showWordInputElements() {
     document.getElementById('inputWordSection').style.display = 'block';
 }
 function displayOutCome(outcomeMessage) {
-    showOutcomesSection();
+    showOutcomeSection();
     document.getElementById('outcomeMsg').innerHTML(outcomeMessage);
 }
 function hideOutcomeSection() {
@@ -171,7 +184,6 @@ function hideOutcomeSection() {
 function showOutcomeSection() {
     document.getElementById('outcomeDisplaySection').style.display = 'block';
 }
-
 //major issues
 //issues- getting words with two of the same letter to display
 //getting hangman part to display

@@ -9,16 +9,20 @@
 </head>
 <body>
     <h1>Hangman</h1>
+    <div id='playGameSection'>
+        <button type="button" id="playGameBtn" onclick='playGame(event)'>Play</button>
+    </div>
     <div id="inputWordSection">
         <h2>Player 1</h2>	
         <input type="text" id="inputWordTxt" />
         <input type="button" id="enterWordBtn" value="Ok" onclick='storeWord(event)'/> 
         <label id="enterWordPrompt" >Enter a word</label>		
+        <br>   
+        <!-- draw hangman stickfigure using canvas API -->
+        <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas>
+        <br>
     </div>
-    <br>   
-    <!-- draw hangman stickfigure using canvas API -->
-    <canvas id="myCanvas" width="500" height="350" style="border:1px solid #000000;"></canvas>
-    <br>
+   
     <div id="inputLetterSection">
         <h2>Player 2</h2>
         <p class="current-word">Current word:</p>
@@ -27,16 +31,17 @@
         <input type="button" id="enterLetterBtn" value="Ok" onclick='storeLetter(event)'/>
         <label id="enterLetterPrompt" >&nbsp;Guess a letter</label>
         <div id="display"></div>
-        <div id="outcomeDisplaySection">
-			<span id="outcomeMsg"></span>
-			<br>
-			<br>
-			<button type="button" id="startOverBtn" onclick='startOver(event)'>Continue</button>
-		</div>
-        <form>
+        <br>
+        <br>
+    </div>
+    <div id="outcomeDisplaySection">
+        <span id="outcomeMsg"></span>
+        <button type="button" id="startOverBtn" onclick='startOver(event)'>Continue</button>
+    </div>
+        <!-- <form>
             <input type="reset" value="Reset"></input>
             <input type="submit" value="End Game"></input>
-        </form>		
+        </form>		 -->
     <script src="script.js"></script>
 </body>
 </html>
