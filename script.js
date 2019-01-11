@@ -62,6 +62,14 @@ hideOutcomeSection(); //hide reset and continue buttons
     }
 ]
 
+ //option to exit game at any time and return to home page
+ function exitGame() { //onclick() called in html tag
+    // automatically refresh page and return to home page
+    showPlayGameSection();
+    hideLetterInputElements();
+    hideOutcomeSection()
+} 
+
 //store and process each letter input and word input when button is clicked
 const wordInput = document.getElementById("inputWordTxt");
 const letterInput = document.getElementById("inputLetterTxt")
@@ -95,6 +103,7 @@ function startOver(evt) { //onclick() called in html tag
     hideOutcomeSection();
 }
 
+
 const letters = document.getElementById('letters');
 
 function displayEmptyWordTemplate() {
@@ -104,6 +113,9 @@ function displayEmptyWordTemplate() {
         letters.appendChild(letter);
     }   
 }   
+
+//this was test var Roger create to show template string see explaination below line: 132
+// const message = "this is a test" 
 
 //series of steps that happen when letter is entered
 function storeLetter(evt) { //onclick() called in html tag
@@ -116,9 +128,11 @@ function storeLetter(evt) { //onclick() called in html tag
 
     //reset the screen after the user guesses the full word correctly or when all hangman parts have been displayed and they miss the word
     if (totalLettersFound > 0 && totalLettersFound === currentWord[0].length) {
-        displayOutCome('You guessed correctly! The word is: ' + currentWord);
+        alert('You guessed correctly! The word is: ' + currentWord);
+        //This was Roger's Example to show you how Template Strings work (template string = ${Variable you define goes here})
+        // displayOutCome(`${message} ${currentWord}`);
     
-        //reset the main variables and start over with a new word
+           //reset the main variables and start over with a new word
         currentWord = [];
         currentLetter = '';
         totalLettersFound = 0;
@@ -158,6 +172,7 @@ function processLetter(currentLetter) {
     }   
 }              
 
+
 //hide and reveal sections of the game
 function showPlayGameSection() {
     document.getElementById('playGameSection').style.display = 'block';
@@ -177,9 +192,10 @@ function showLetterInputElements() {
 function showWordInputElements() {
     document.getElementById('inputWordSection').style.display = 'block';
 }
-function displayOutCome(outcomeMessage) {
+function displayOutCome() {
     showOutcomeSection();
-    document.getElementById('outcomeMsg').innerHTML(outcomeMessage);
+    const outcomeMessage = 'You guessed correctly.'
+    document.getElementById('outcomeMsg').innerHTML(`${outcomeMessage}`);
 }
 function hideOutcomeSection() {
     document.getElementById('outcomeDisplaySection').style.display = 'none';
