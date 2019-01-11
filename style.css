@@ -1,0 +1,26 @@
+#enterWordTxt {
+    border: solid green 2px;
+}
+#enterWordBtn {
+    border: solid purple 2px;
+}
+
+#display {
+    border: solid yellow 2px;
+    padding: 40px;
+}
+
+.letterBox {
+    /* border: solid red 2px; */
+    display: none;
+    /* visibility: hidden; */
+    float: left;
+    width: 100px;
+    height: 50px;
+    border-bottom: solid #000;
+    margin: 10px;
+}
+
+.letters {
+    border-bottom: solid #000;
+}
