@@ -18,6 +18,11 @@ window.onload = function displayHanger() {
 
 hideLetterInputElements(); //Hide ability to input a letter until a word has been entered
 
+ var currentWord = []; //currentWord will be set to the most recent word typed in the word text box
+ var currentLetter = ""; //currentLetter will be set to the most recent letter typed in the letter text box
+ var totalLettersFound = 0; //totaLettersFound will be set to total letters guessed correctly for the currentWord
+
+ //Hide and reveal sections of the game
 function hideLetterInputElements() {
     document.getElementById('inputLetterSection').style.display = 'none';
 }
